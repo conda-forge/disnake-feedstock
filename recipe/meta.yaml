@@ -10,7 +10,7 @@ source:
   sha256: 0e062042b103b18601b62cc25b301ef837b40af2de15efeb7108466078243bb8
 
 build:
-  noarch: python
+  noarch: python >=3.8,<3.13
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
@@ -20,9 +20,8 @@ requirements:
     - setuptools >=61
     - pip
   run:
-    - python >=3.8
+    - python >=3.8,<3.13
     - aiohttp >=3.7.0,<4.0
-    - audioop-lts; python_version >= "3.13"
 
 test:
   imports:
