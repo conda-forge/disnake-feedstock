@@ -1,5 +1,5 @@
 {% set name = "disnake" %}
-{% set version = "2.9.2" %}
+{% set version = "2.9.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/disnake-{{ version }}.tar.gz
-  sha256: e6df395d0eb1bb402c3416c1ed28c35460a18322b05aa187ec76cdbe2304e828
+  sha256: 0e062042b103b18601b62cc25b301ef837b40af2de15efeb7108466078243bb8
 
 build:
   noarch: python
