@@ -1,5 +1,6 @@
 {% set name = "disnake" %}
-{% set version = "2.9.3" %}
+{% set version = "2.10.1" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/disnake-{{ version }}.tar.gz
-  sha256: 0e062042b103b18601b62cc25b301ef837b40af2de15efeb7108466078243bb8
+  sha256: e469938c72f88432b55bc5f521a260f027d3db9e5337fe0f28098f3bfafc5a43
 
 build:
   noarch: python
@@ -16,11 +17,11 @@ build:
 
 requirements:
   host:
-    - python 3.8
+    - python {{ python_min }}
     - setuptools >=61
     - pip
   run:
-    - python >=3.8,<3.13
+    - python >={{ python_min }}
     - aiohttp >=3.7.0,<4.0
 
 test:
@@ -29,7 +30,7 @@ test:
   commands:
     - pip check
   requires:
-    - python 3.8
+    - python {{ python_min }}
     - pip
 
 about:
